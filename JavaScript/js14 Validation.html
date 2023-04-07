@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="frm1" method="post" action="/BootStrap/NavBar2.html" onsubmit="return ValidateLoginForm()">
+        <div style="text-align: center;">
+            <h1>Javascript Validation</h1>
+            <hr>
+        </div>
+        <div class="container-fluid">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-success">
+                            <b class="text-white">Login Here</b>
+                        </div>
+                        <div class="card-body">
+                            Username:
+                            <input type="text" name="UserTxt" placeholder="Enter Name" class="form-control">
+                            Password:
+                            <input type="password" name="password" placeholder="Enter Password" class="form-control">
+                            <br>
+                            <a href="">Forgot Password?</a>
+                            <br>
+                            <br>
+                            <input type="submit" value="Login" Class="btn btn-primary ">
+                            <input type="reset" value="Reset All" Class="btn btn-danger ">
+                        </div>
+                        <!--
+                        <div class="card-footer">
+                            <label class="text-white" style="background-color:green;width: 100%;text-align: center;">Login Success</label>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function ValidateLoginForm() {
+            var uname = frm1.UserTxt.value;
+            var pwd = frm1.password.value;
+            if (uname == "" && pwd == "") {
+                alert("Please Enter User Name and Password");
+                return false;
+            }
+            if(uname==""||pwd==false){
+                alert("Please Check User Name & Password");
+                return false;
+            }
+            if(uname=="Chandan"&&pwd=="Chandan@1234"){
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>

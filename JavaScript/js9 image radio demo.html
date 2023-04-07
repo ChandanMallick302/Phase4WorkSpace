@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jAVA SCRIPT IMAGES DEMO</title>
+</head>
+
+<body>
+    <!--Html Working Space-->
+    <form name="frm1">
+        <h1 style="text-align: center">Radio Button</h1>
+        <hr>
+        <div style="text-align: center;">
+            <h2>Images Demo :</h2>
+            <input type="radio" name="rdoImg" id="rod1" value="a.jpg">Pic1
+            <input type="radio" name="rdoImg" id="rdo2" value="b.jpg">Pic2
+            <input type="radio" name="rdoImg" id="rdo3" value="c.jpg">Pic3
+            <input type="button" value="Get an Picture" onclick="DemoImgRadio()">
+            <br><br>
+            <!-- <img src="/JavaScript/Images/a.jpg" height="200px" width="100%"> -->
+            <div id="res" style="color: green;"></div>
+        </div>
+    </form>
+    <!--javascript working space-->
+    <script type="text/javascript">
+        function DemoImgRadio() {
+            if (document.getElementById("rod1").checked == true ||
+                document.getElementById("rdo2").checked == true ||
+                document.getElementById("rdo3").checked == true) {
+                var getpicname = frm1.rdoImg.value;
+                var printpic = "<img src='/JavaScript/Images/" + getpicname + "' height='250px' width='100%' />";
+                // alert(printpic);
+                document.getElementById("res").innerHTML = printpic;
+            }
+            else
+                alert("Please select any one option");
+        }
+    </script>
+</body>
+
+</html>

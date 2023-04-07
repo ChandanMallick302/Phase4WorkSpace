@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="loadingDateItems()">
+    <form name="frm1">
+        <div style="text-align: center;">
+            <h1>JavaScript-Dynamic DropdownList</h1>
+            <hr>
+            <select name="ddlday" id="ddlday">
+                <!--Hard coding-->
+                <!-- <option value="-1">Day</option> -->
+                <!-- <option value="1">1</option>
+            <option value="2">2</option> -->
+            </select>
+            <select name="ddlmonth" id="ddlmonth"></select>
+            <select name="ddlyear" id="ddlyear"></select>
+            <br><br>
+            <input type="button" value="GetDate" onclick="Displaydate()">
+            <br><br>
+            <div id="res" style="color: chocolate;"></div>
+        </div>
+    </form>
+
+
+    <script type="text/javascript">
+        function loadingDateItems() {
+            var days = "<option value='-1'>Day</option>";
+            for (let n = 1; n <= 31; n++) {
+                days = days + "<option value='" + n + "'>" + n + "</option>";
+                // alert(days);
+                document.getElementById("ddlday").innerHTML = days;
+            }
+            var years = "<option value='-3" + "'>Year</option>";
+            for (let n = 1980; n <= 2023; n++) {
+                years = years + "<option vaule='" + n + "'>" + n + "</option>";
+                document.getElementById("ddlyear").innerHTML = years;
+            }
+            var month = ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var months = "<option value='-2'>Month</option>";
+            for (let i = 0; i < month.length; i++) {
+                months = months + "<option value='" + month[i] + "'>" + month[i] + "</option>";
+                document.getElementById("ddlmonth").innerHTML = months;
+            }
+        }
+
+        function Displaydate() {
+            var day = frm1.ddlday.value;
+            var month = frm1.ddlmonth.value;
+            var year = frm1.ddlyear.value;
+            var result = day + " - " + month + " - " + year;
+            document.getElementById("res").innerHTML = "Seected Date is " + result;
+        }
+    </script>
+
+</body>
+
+</html>

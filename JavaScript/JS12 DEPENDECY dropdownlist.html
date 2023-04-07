@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="frm1">
+        <div style="text-align: center;">
+            <h1>Javascript Dependency-Dropdownlist0</h1>
+            <hr>
+            Country :
+            <select name="ddlCountry" onchange="loadState()" style="width: 120px;">
+                <option value="-1">Select Country</option>
+                <option value="IND">India</option>
+                <option value="USA">America</option>
+            </select>
+            <br><br>
+            State:
+            <select name="ddlState" id="ddlState" style="width: 120px;" onchange="deisplayloc()"></select>
+            <br><br>
+            <div id="res" style="color: chocolate;"></div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function loadState() {
+
+            var country = frm1.ddlCountry.value;
+            if (country != "-1") {
+                var state = "<option value='-2'>state</option>";
+                if (country == "IND") {
+                    var INDstate = ["Odisha", "Bihar", "UP", "MP", "Maharastra", "Telengana", "Karnataka", "Kerala"];
+                    for (let i = 0; i < INDstate.length; i++) {
+                        state = state + "<option valiue=" + INDstate[i] + "'>" + INDstate[i] + "</option>";
+                    }
+                    document.getElementById("ddlState").innerHTML = state;
+                }
+                if (country == "USA") {
+                    var USAstate = ["LossAngels", "Washington DC", "Florida"];
+                    for (let i = 0; i < USAstate.length; i++) {
+                        state = state + "<option valiue=" + USAstate[i] + "'>" + USAstate[i] + "</option>";
+                    }
+                    document.getElementById("ddlState").innerHTML = state;
+                }
+                // alert(state);
+            } else {
+                alert("Please select the Country");
+                document.getElementById("ddlState").innerHTML = "";
+            }
+        }
+        function deisplayloc() {
+            var co = frm1.ddlCountry.value;
+            var st = frm1.ddlState.value;
+            var res = "Your are from " + co + "," + st;
+            document.getElementById("res").innerHTML = res;
+        }
+
+    </script>
+</body>
+
+</html>

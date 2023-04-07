@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="frm1">
+        <div style="text-align: center;">
+            <h1>Javascript CheckBox</h1>
+            <hr>
+            Person Name: <input type="text" name="txtPname">
+            <br><br>
+            Hobbies :
+            <input type="checkbox" name="chk1" value="chess"> Playing chess
+            <input type="checkbox" name="chk2" value="carrom"> Playing carrom
+            <input type="checkbox" name="chk3" value="reading"> Reading Books
+            <br><br>
+            <input type="button" value="Click Me" onclick="democheckbox()">
+            <br> <br>
+            <div id="res" style="color: chocolate">
+
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function democheckbox(){
+            var res=frm1.txtPname.value;
+            res=res+" having hobbies : ";
+            var chkr=false;
+            if(frm1.chk1.checked){
+                res=res+"<br>Playing Chess"
+                chkr=true;
+            }
+            if(frm1.chk2.checked){
+                res=res+"<br>Playing carrom"
+                chkr=true;
+            }
+            if(frm1.chk3.checked){
+                res=res+"<br>Reading Books"
+                chkr=true;
+            }
+            document.getElementById("res").innerHTML=res;
+            if(frm1.txtPname.value=="" && chkr==true){
+                alert("Please Enter Name")
+                document.getElementById("res").innerHTML="";
+            }
+            if(frm1.txtPname.value!="" && chkr==false){
+                alert("Please Select Hobbies")
+                document.getElementById("res").innerHTML="";
+            }
+            if(chkr==false && frm1.txtPname.value==""){
+                alert("Please Enter Name & then Select Hobbies")
+                document.getElementById("res").innerHTML="";
+            }
+        }
+    </script>
+</body>
+</html>
