@@ -1,0 +1,11 @@
+<div class="login">
+    Login : <hr><br>
+UserName : <input type="text" [(ngModel)]="uName">
+<br><br>
+Password : <input type="password" [(ngModel)]="pwd">
+<br><br>
+<input type="button" value="Login" (click)="checkLogin()">
+<div style="font-weight: bold;color: green;">
+{{msg}}
+</div>
+</div>

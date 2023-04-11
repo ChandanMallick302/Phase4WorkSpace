@@ -1,0 +1,32 @@
+<div>
+    <h1>Person Information</h1>
+    <h2>Person Name : {{personname}}</h2>
+    <h2>Age : {{Age}}</h2>
+    <h2>Do you have Bike : {{Bike}}</h2>
+    <h2>Country : {{Country}}</h2>
+    <h2>Gender : {{Gender}}</h2>
+    <h2>Website : {{Url}}</h2>
+</div>
+<hr>
+<div>
+    Person Name : <input type="text" [(ngModel)]="personname">
+    <br>
+    Age : <input type="text" [(ngModel)]="Age">
+    <br>
+    Gender : <input type="radio" [(ngModel)]="Gender" value="Male">Male
+    <input type="radio" [(ngModel)]="Gender" value="Female">Female
+    <br>
+    Do you have Bike :
+    <input type="checkbox" [(ngModel)]="Bike">
+    <br>
+    Country :
+    <select [(ngModel)]="Country">
+        <option>India</option>
+        <option>USA</option>
+        <option>Canada</option>
+    </select>
+    <br>
+    Url : <a [href]="Url">MySite</a>
+    <br>
+    <input type="button" value="Click Me" (click)="changefun()">
+</div>

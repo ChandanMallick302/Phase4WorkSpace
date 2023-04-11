@@ -1,0 +1,20 @@
+<div>
+    <h1>This is Test1 Component</h1>
+    <h1>Student Name : {{sname}}</h1>
+    <h1>Student No : {{sno}}</h1>
+    <h1>Location : {{loc}}</h1>
+    <span>Student Name : </span>
+    <input type="text" [value]="sname" name="txtName">
+    <br>
+    <span>Student No : </span>
+    <input type="text" [value]="sno" name="txtNo">
+    <br>
+    <span>Location : </span>
+    <input type="text" [value]="loc" name="txtLoc">
+    <br>
+    <input type="button" value="Save" (click)="demofun()">
+    <br>
+    <hr>
+    <h1>Two-Way Binding</h1>
+    <input type="text" [(ngModel)]="sname" name="txtName">
+</div>
