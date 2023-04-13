@@ -1,0 +1,26 @@
+<h1>Login Page</h1>
+<h1>Pipes Demo</h1>
+<h1>Person name : {{personName}}</h1>
+<h1>Salary : {{salary}}</h1>
+<h2>Date: {{dt}}</h2>
+<hr>
+<h2>After Applying Pipes</h2>
+<h1>Person name : {{personName|uppercase}}</h1>
+<h1>Person name : {{personName|lowercase}}</h1>
+<h1>Person name : {{personName|lowercase}}</h1>
+<h2>TitlePipe: {{title|titlecase}}</h2>
+<h2>Number format salary : {{salary|number:'2.3-4'}}</h2>
+<h2>Indian salary : {{salary|currency:'INR'}}</h2>
+<h2>USA salary : {{salary|currency:'USD'}}</h2>
+<h2>Europian salary : {{salary|currency:'EUR'}}</h2>
+<h2>British salary : {{salary|currency:'GBP'}}</h2>
+<h2>Short Date: {{dt|date:"shortDate"}}</h2>
+<h2>Medium Date: {{dt|date:"mediumDate"}}</h2>
+<h2>Long Date: {{dt|date:"longDate"}}</h2>
+<h2>Date Format: {{dt|date:'dd-MM-yyyy'}}</h2>
+<h2>Short Time: {{dt|date:"shortTime"}}</h2>
+<h2>Medium Time: {{dt|date:"mediumTime"}}</h2>
+<h2>Long Time: {{dt|date:"longTime"}}</h2>
+<h2>Time Format: {{dt|date:'h:m:s'}}</h2>
+<h2>Json Format: {{person|json}}</h2>
+<h2>Percentage Format: {{val|percent}}</h2>

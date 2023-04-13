@@ -1,0 +1,35 @@
+<h1>Contact Page</h1>
+
+<table width="100%" border="1" style="text-align: center; padding: auto;">
+    <tr>
+        <th>Emp no</th>
+        <th>Emp name</th>
+        <th>Job</th>
+        <th>Salary</th>
+        <th>Operation</th>
+    </tr>
+    <tr *ngFor="let emp of empinfo; let i =index">
+        <td>{{emp.empno|json}}</td>
+        <td>{{emp.empname|uppercase}}</td>
+        <td>{{emp.job|lowercase}}</td>
+        <td>{{emp.esal|currency:"INR"}}</td>
+        <td><input type="button" value="Delete" (click)="deleteEmployee(i)"> </td>
+    </tr>
+    <tr>    
+        <td>
+            <input type="text" [(ngModel)]="newemp.empno">
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="newemp.empname">
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="newemp.job">
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="newemp.esal">
+        </td>
+        <td>
+            <input type="button" value="Add Emp" (click)="addEmployee()">
+        </td>
+    </tr>
+</table>

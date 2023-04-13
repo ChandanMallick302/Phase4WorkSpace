@@ -1,0 +1,35 @@
+<h1>Register Page</h1>
+<div>
+    <span>Select Country :</span>
+    <select [(ngModel)]="country">
+        <option>Select Country</option>
+        <option>India</option>
+        <option>USA</option>
+    </select>
+    <div [ngSwitch]="country">
+        <p *ngSwitchCase="'India'">
+            Are You Interested to Study in India?
+        </p>
+        <p *ngSwitchCase="'USA'">
+            Are You Interested to Study in USA?
+        </p>
+        <p *ngSwitchDefault>
+            Please Select any ane option
+        </p>
+    </div>
+</div>
+<hr>
+<h1>Cities</h1>
+<ul type="circle">
+    <li *ngFor="let c of cities">
+        {{c}}
+    </li>
+</ul>
+<table width="100%" border="1">
+    <tr *ngFor="let c of cities">
+        <td>{{c}}</td>
+    </tr>
+</table>
+<div>
+
+</div>

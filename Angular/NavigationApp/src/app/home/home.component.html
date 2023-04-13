@@ -1,0 +1,27 @@
+<h1>Home Page</h1>
+<hr>
+("[ngClass]")
+<h1>Secured Marks : {{marks}}</h1>
+<h1 [ngClass]="myclass">{{result}}</h1>
+
+<hr>
+("*ngIf")
+<h1>Secured Marks : {{marks}}</h1>
+<div *ngIf="chk" style="color: green;">
+    <h1>Congrats</h1>
+</div>
+<div *ngIf="!chk" style="color: red;">
+    <h1>Better Luck Next Time</h1>
+</div>
+
+<hr>
+("*ngIf else")
+<h1>Secured Marks : {{marks}}</h1>
+<div *ngIf="chk;then temp1;else temp2"></div>
+
+<ng-template #temp1>
+    <h1 style="color: green;">Congrats</h1>
+</ng-template>
+<ng-template #temp2>
+    <h1 style="color: red;">Better Luck Next Time</h1>
+</ng-template>
